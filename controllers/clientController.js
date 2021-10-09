@@ -28,6 +28,42 @@ class ClientController{
             })
         }
     }
+    async patch(req,res){
+        try {
+            const {id} = req.params
+            const{name, birthdate, gender} = req.body
+            const filter = {_id:id}
+            const update = {
+                name:name,
+                birthdate:birthdate,
+                gender:gender
+            }
+            const result = await modelClient.findOneAndUpdate(filter, update, {
+                 new:true,                  
+            }) 
+            return res.status(201).send(result)
+        } catch (error) {
+            return res.status(400).json({
+                message: 'não deu'
+            })
+        }
+
+    }
+    async delete(req,res){
+        try {
+            const {id} = req.params         
+            const filter = {_id:id}
+           
+            const result = await modelClient.findOneAndDelete (filter, {
+                 new:true,                  
+            }) 
+            return res.status(204).send()
+        } catch (error) {
+            return res.status(400).json({
+                message: 'No delete'
+            })
+        }
+    }
 
 } 
 
