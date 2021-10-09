@@ -4,7 +4,7 @@ const modelCity = require('../models/tablecity')
 class CityController{
     async get (req,res){
         try {
-            const city = await modelCity.findAll()
+            const city = await modelCity.find()
             return res.status(200).send(city)
             
         } catch (error) {
