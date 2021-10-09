@@ -22,7 +22,7 @@ class CityController{
             })
             return res.status(201).send(result)
         } catch (error) {
-            return res.status(400).json({
+          return res.status(400).json({
                 message:'No create city'
             })
         }
