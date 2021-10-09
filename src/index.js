@@ -1,5 +1,6 @@
 const express = require('express')
 const routeClient = require('../routes/clientRoute')
+const routeCity = require('../routes/cityRoute')
 require('../database/connect')
 
 class Controller {
@@ -12,8 +13,8 @@ class Controller {
         this.express.use(express.json())
     }
     routes(){
-        this.express.use('/', routeCity)
-        this.express.use('/client', routeClient)
+        this.express.use('/api/city', routeCity)
+        this.express.use('/city/client', routeClient)
     }
 }
  module.exports = new Controller().express

@@ -1,21 +1,17 @@
 const connectiondb = require('../database/connect')
 const mongoose = require('mongoose') 
 
-  const city = new mongoose.Schema({
+const City = mongoose.Schema({
     name: {
-        type: String,
-        require: true,
+      type: String,
+      required: true
     },
     state: {
-        type: String,
-        reuire: true,
-
-    },
-    createdAt : {
-        type: Date,
-        default: Date.now,
+      type: String,
+      required: true
     }
+  }, {
+    timestamps: true
+  })
     
-    })
-    
-    module.exports = city.model('city' , city)
+  module.exports = mongoose.model('city' , City)

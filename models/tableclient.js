@@ -1,32 +1,25 @@
 const connectiondb = require('../database/connect')
 const mongoose = require('mongoose') 
 
-  const client = new mongoose.Schema({
+const Client = mongoose.Schema({
     name: {
-        type: String,
-        require: true,
+      type: String,
+      require: true
     },
-    
     birthcity: {
-        type: String,
-        require:true
+      type: String,
+      require: true
     },
     gender: {
-        type: String,
-        require:true
+      type: String,
+      require: true
     },
-    bithdate : {
-        type: String,
-        require: true
-
-    },
-    
-    createdAt : {
-        type: Date,
-        default: Date.now,
+    bithdate: {
+      type: String,
+      require: true
     }
-    
-    })
-    console.log(client)
-
-    module.exports = client.model('client' , client)
+  }, {
+    timestamps: true
+  })
+  
+  module.exports = mongoose.model('client', Client)
