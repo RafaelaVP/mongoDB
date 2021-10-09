@@ -4,7 +4,7 @@ const modelClient = require('../models/tableclient')
 class ClientController{
     async get (req,res){
         try {
-            const clients = await modelClient.findAll()
+            const clients = await modelClient.find()
             return res.status(200).send(clients)
             
         } catch (error) {
@@ -15,10 +15,9 @@ class ClientController{
     }
     async post (req, res){
         try {
-            const {name, birthcity, birthdate, gender} = req.body
+            const {name,birthdate, gender} = req.body
             const result = await modelClient.create({
                 name:name,
-                birthcity:birthcity,
                 birthdate:birthdate,
                 gender:gender,
             })

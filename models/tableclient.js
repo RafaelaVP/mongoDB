@@ -6,10 +6,6 @@ const Client = mongoose.Schema({
       type: String,
       require: true
     },
-    birthcity: {
-      type: String,
-      require: true
-    },
     gender: {
       type: String,
       require: true

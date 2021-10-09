@@ -13,8 +13,8 @@ class Controller {
         this.express.use(express.json())
     }
     routes(){
-        this.express.use('/api/city', routeCity)
-        this.express.use('/city/client', routeClient)
+        this.express.use('/search/city', routeCity)
+        this.express.use('/search/city/client', routeClient)
     }
 }
  module.exports = new Controller().express
