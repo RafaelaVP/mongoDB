@@ -1,3 +1,5 @@
+const { set } = require('mongoose')
+const { findOneAndUpdate } = require('../models/tablecity')
 const modelCity = require('../models/tablecity')
 
 
@@ -26,6 +28,27 @@ class CityController{
                 message:'No create city'
             })
         }
+    }
+    async patch(req,res){
+        try {
+            const {id} = req.params
+            const{name, state} = req.body
+            const filter = {_id:id}
+            const update = {
+                name:name,
+                state:state
+            }
+            const result = await modelCity.findOneAndUpdate(filter, update, {
+                 new:true,
+                         
+            }) 
+            return res.status(201).send(result)
+        } catch (error) {
+            return res.status(400).json({
+                message: 'não deu'
+            })
+        }
+
     }
 
 } 

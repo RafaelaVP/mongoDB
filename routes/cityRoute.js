@@ -6,5 +6,7 @@ routes.get('/',CityController.get)
 
 routes.post('/',CityController.post)
 
+routes.patch('/:id', CityController.patch)
+
 
 module.exports = routes
