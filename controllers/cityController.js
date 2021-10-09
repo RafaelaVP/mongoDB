@@ -39,8 +39,7 @@ class CityController{
                 state:state
             }
             const result = await modelCity.findOneAndUpdate(filter, update, {
-                 new:true,
-                         
+                 new:true,                  
             }) 
             return res.status(201).send(result)
         } catch (error) {
@@ -49,6 +48,21 @@ class CityController{
             })
         }
 
+    }
+    async delete(req,res){
+        try {
+            const {id} = req.params         
+            const filter = {_id:id}
+           
+            const result = await modelCity.findOneAndDelete  (filter, {
+                 new:true,                  
+            }) 
+            return res.status(204).send()
+        } catch (error) {
+            return res.status(400).json({
+                message: 'No delete'
+            })
+        }
     }
 
 } 
