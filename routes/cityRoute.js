@@ -10,5 +10,7 @@ routes.patch('/:id', CityController.patch)
 
 routes.delete('/:id', CityController.delete)
 
+routes.get('/:id', CityController.getId)
+
 
 module.exports = routes
