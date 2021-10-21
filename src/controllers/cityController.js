@@ -54,7 +54,7 @@ class CityController{
             return res.status(201).send(result)
         } catch (error) {
             return res.status(400).json({
-                message: 'não deu'
+                message: 'não deu certo'
             })
         }
 
