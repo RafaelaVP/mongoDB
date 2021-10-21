@@ -1,7 +1,7 @@
 const express = require('express')
-const routeClient = require('../routes/clientRoute')
-const routeCity = require('../routes/cityRoute')
-require('../database/connect')
+const routeClient = require('./routes/clientRoute')
+const routeCity = require('./routes/cityRoute')
+require('../src/database/connect')
 
 class Controller {
     constructor() {

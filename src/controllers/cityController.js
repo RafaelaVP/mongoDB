@@ -1,6 +1,6 @@
 const { set } = require('mongoose')
-const { findOneAndUpdate } = require('../models/tablecity')
-const modelCity = require('../models/tablecity')
+const { findOneAndUpdate } = require('../schemas/schemacity')
+const modelCity = require('../schemas/schemacity')
 
 
 class CityController{

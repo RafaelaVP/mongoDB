@@ -1,4 +1,4 @@
-const modelClient = require('../models/tableclient')
+const modelClient = require('../schemas/schemaclient')
 
 
 class ClientController{
